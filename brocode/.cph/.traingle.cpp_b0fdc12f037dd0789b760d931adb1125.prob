@@ -1,0 +1,1 @@
+{"name":"Local: traingle","url":"c:\\Users\\rohit\\Desktop\\yt\\brocode\\traingle.cpp","tests":[{"id":1670338247002,"input":"3\n13\n5\n11","output":"27.5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\rohit\\Desktop\\yt\\brocode\\traingle.cpp","group":"local","local":true}
