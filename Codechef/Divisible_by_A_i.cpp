@@ -71,7 +71,6 @@ string reverses(string s, int n)
     return string(a.rbegin(), a.rend()) + b;
 }
 
-
 int main()
 {
     effin_out;
@@ -79,7 +78,7 @@ int main()
     cin >> t;
     while (t--)
     {
-        m = 998244353;
+
         ll n;
         cin>>n;
         vl a(n);
@@ -87,8 +86,16 @@ int main()
             cin>>a[i];
         }
 
-        
+        ll x;
 
+
+        rep( i , n-1){
+            x= __gcd(a[i] , a[i+1]);
+        }
+
+        rep(i ,n){
+            cout<<a[i]/x<<" ";
+        }cout<<endl;
     }
     return 0;
 }

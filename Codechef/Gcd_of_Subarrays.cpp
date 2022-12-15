@@ -71,26 +71,31 @@ string reverses(string s, int n)
     return string(a.rbegin(), a.rend()) + b;
 }
 
-
-void checkMaxUnequalCake(){
-    int count = 0;
-    int itr = 1;
-    int final = 0;
-    while(final <= 360){
-        final += itr;
-        itr++;
-        count ++;
-    }
-
-
-    cout<<count-1<<endl;
-}
-
 int main()
 {
     effin_out;
-        checkMaxUnequalCake();
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        ll n , k;
+        cin>>n>>k;
+        if( (n*(n+1)/2) -1 > k){
+            cout<< -1<<endl;
+            continue;
+        }
+        if( n == 1){
+                cout<<k<<endl;
+                continue;
+        }
+        rep(i , n-1){
+            cout<<1<<" ";
+        }
+        ll x = (n*(n+1)/2) -2;
+        cout<<k-x-1<<endl;
+
         
-    
+
+    }
     return 0;
 }
