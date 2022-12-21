@@ -1,0 +1,1 @@
+{"name":"Local: MINDIST1","url":"c:\\Users\\rohit\\Desktop\\yt\\Codechef\\MINDIST1.cpp","tests":[{"id":1671633801880,"input":"3\n2\n11\n3\n101\n7\n0100101","output":"1\n2\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\rohit\\Desktop\\yt\\Codechef\\MINDIST1.cpp","group":"local","local":true}
