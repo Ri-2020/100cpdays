@@ -15,8 +15,8 @@ using namespace std;
     cin.tie(0);              \
     cout.tie(0)
 #define check cout << "check 1 "
-#define yes  cout << "YES" << endl
-#define no cout << "NO" << endl
+#define yes = cout << "YES" << endl
+#define on = cout << "NO" << endl
 int m = 1000000007;
 
 ll log_2(ll x)
@@ -78,6 +78,20 @@ int main()
     cin >> t;
     while (t--)
     {
+        int a,b,n;
+        cin>>a>>b>>n;
+        int count = 0;
+        while(a<= n and b<= n){
+            if(a<b){
+                a+=b;
+            }else{
+                b+=a;
+            }
+            count++;
+        }
+
+
+        cout<<count<<endl;
     }
     return 0;
 }

@@ -76,8 +76,24 @@ int main()
     effin_out;
     int t;
     cin >> t;
-    while (t--)
-    {
+    vi a(t);
+    int sum = 0;
+    rep(i ,t){
+        cin>>a[i];
+        sum+= a[i];
     }
-    return 0;
+    sort(a.begin() , a.end());
+    int curr =0;
+    int req = sum/2;
+    int count = 0;
+    rep(i ,t){
+        if(curr> req){
+            break;
+        }
+        curr+= a[i];
+        count++;
+    }
+    cout<<count<<endl;
+
+    return 0; 
 }

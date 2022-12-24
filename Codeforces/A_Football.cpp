@@ -74,10 +74,15 @@ string reverses(string s, int n)
 int main()
 {
     effin_out;
-    int t;
-    cin >> t;
-    while (t--)
-    {
+    string s;
+    cin>>s;
+    auto i = s.find("0000000");
+    auto x = s.find("1111111");
+    if(x!= string::npos or i!= string::npos){
+        yes;
+    }else{
+        no;
     }
+    
     return 0;
 }
