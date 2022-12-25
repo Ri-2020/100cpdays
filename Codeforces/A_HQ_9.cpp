@@ -74,26 +74,15 @@ string reverses(string s, int n)
 int main()
 {
     effin_out;
-    int t;
-    cin >> t;
-    vi a(t);
-    int sum = 0;
-    rep(i ,t){
-        cin>>a[i];
-        sum+= a[i];
-    }
-    sort(a.rbegin() , a.rend());
-    int curr =0;
-    int req = sum/2;
-    int count = 0;
-    rep(i ,t){
-        if(curr> req){
-            break;
+    string s;
+    cin>>s;
+    int n = s.size();
+    rep(i , n){
+        if(s[i] == 'H' or s[i] == 'Q' or s[i] == '9'){
+            yes;
+            return 0;
         }
-        curr+= a[i];
-        count++;
     }
-    cout<<count<<endl;
-
-    return 0; 
+    no;
+    return 0;
 }
