@@ -74,12 +74,21 @@ string reverses(string s, int n)
 int main()
 {
     effin_out;
-    ll n , m , a;
-    cin>>n>>m>>a;
-    ll x = n/a;
-    if(n%a >0 ) x++;
-    ll y = m/a;
-    if(m%a) y++;
-    cout<<x*y<<endl;
+    string s , ch = "hello";
+    cin>>s;
+
+    int a = 0;
+    int i = 0;
+    while(a< ch.size() and i<s.size() ){
+        if(s[i] == ch[a]){
+            a++;
+        }
+
+        i++;
+    }
+
+    if(a == ch.size()) yes;
+    else no;
+    
     return 0;
 }

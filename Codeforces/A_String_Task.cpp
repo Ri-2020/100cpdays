@@ -71,15 +71,33 @@ string reverses(string s, int n)
     return string(a.rbegin(), a.rend()) + b;
 }
 
+unordered_set<char> vo = {'a' , 'e' , 'i' , 'o' , 'u', 'y' , 'A' , 'E' , 'I' , 'O' , 'U' , 'Y'};
+
+int checkChar(char s){
+
+    if(vo.find(s) != vo.end()){
+        return 0;
+    }
+    return 1;
+
+
+}
+
+// "A", "O", "Y", "E", "U", "I" what do yoy means these are vowels
+
 int main()
 {
     effin_out;
-    ll n , m , a;
-    cin>>n>>m>>a;
-    ll x = n/a;
-    if(n%a >0 ) x++;
-    ll y = m/a;
-    if(m%a) y++;
-    cout<<x*y<<endl;
+    string s;
+    cin>>s;
+    string ans = "";
+    transform(s.begin(), s.end(), s.begin(), ::tolower);
+    rep(i ,s.size()){
+        if(checkChar(s[i])){
+            ans = ans + "."+ s[i];
+        }
+    } 
+
+    cout<<ans<<endl;
     return 0;
 }

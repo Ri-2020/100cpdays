@@ -71,15 +71,19 @@ string reverses(string s, int n)
     return string(a.rbegin(), a.rend()) + b;
 }
 
+unordered_set<int> ch = {4, 7, 47 ,74 , 44 ,77, 444,447,477,777, 774,744 , 474 , 747};
+
 int main()
 {
     effin_out;
-    ll n , m , a;
-    cin>>n>>m>>a;
-    ll x = n/a;
-    if(n%a >0 ) x++;
-    ll y = m/a;
-    if(m%a) y++;
-    cout<<x*y<<endl;
+    int n;
+    cin>>n;
+    for(auto it : ch){
+        if(n%it == 0){
+            yes;
+            return 0;
+        }
+    }
+    no;
     return 0;
 }

@@ -74,12 +74,10 @@ string reverses(string s, int n)
 int main()
 {
     effin_out;
-    ll n , m , a;
-    cin>>n>>m>>a;
-    ll x = n/a;
-    if(n%a >0 ) x++;
-    ll y = m/a;
-    if(m%a) y++;
-    cout<<x*y<<endl;
+    int a,b,c;
+    cin>>a>>b>>c;
+    vi q = { a*b*c  , a*(b+c) , a*b+c , a+b *c , (a+b)*c , a+b+c};
+    sort(q.begin() , q.end());
+    cout<<q[q.size()-1]<<endl;
     return 0;
 }
