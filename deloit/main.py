@@ -1,12 +1,20 @@
-def SieveOfEratosthenes(num):
-    prime = [True for i in range(num+1)]
-    p = 2
-    while (p * p <= num):
-        if (prime[p] == True):
-            for i in range(p * p, num+1, p):
-                prime[i] = False
-        p += 1
-    for p in range(2, num+1):
-        if prime[p]:
-            print(p)
-  
+def hp(num):
+    result = ""
+    for i in range(len(num)):
+        if(int(num[i]) %2 == 1):
+            result += num[i]
+    for i in range(len(num)-1, -1 , -1):
+        if(int(num[i])%2 == 0):
+            result += num[i]
+    return result
+
+
+def main():
+    n = int(input())
+    for i in range(n):
+        str = input()
+        print(hp(str))
+
+main()
+
+        

@@ -1,0 +1,1 @@
+{"name":"Local: main","url":"c:\\Users\\rohit\\Desktop\\yt\\deloit\\main.py","tests":[{"id":1672318229648,"input":"2\n2143658790\n1234567890","output":"1357908642\n1357908642"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\rohit\\Desktop\\yt\\deloit\\main.py","group":"local","local":true}
