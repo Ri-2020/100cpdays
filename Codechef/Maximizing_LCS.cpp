@@ -6,7 +6,6 @@ using namespace std;
 #define pf push_front
 #define vi vector<int>
 #define vl vector<ll>
-#define ms(a) memset(a,0,sizeof(a))
 #define pl pair<ll, ll>
 #define rep(i, n) for (int i = 0; i < n; i++)
 #define repi(i, x, n) for (int i = x; i < n; i++)
@@ -18,7 +17,7 @@ using namespace std;
 #define check cout << "check 1 "
 #define yes  cout << "YES" << endl
 #define no cout << "NO" << endl
-int m = 1000000007;
+int m = 998244353;
 
 ll log_2(ll x)
 {
@@ -72,52 +71,38 @@ string reverses(string s, int n)
     return string(a.rbegin(), a.rend()) + b;
 }
 
-const int maxn=1e6+10;
-int a[maxn];
-int vis[5];
 
-int main()
-{
-    effin_out;
-    int n;
-	ms(vis);
-	cin>>n;
-	for(int i=0;i<n;i++)
-	{
-		cin>>a[i];
-		vis[a[i]]++;
+vector<vector<int>>  findAnswer(int n , string stirngA , string stringB ){
+    vector<vector<int>> dp(n+1, vector<int>(n+1,0));
+	    for(int i=1;i<=n ; i++){
+    	    for(int j=1;j<=n ; j++){
+    	        if(stirngA[i-1] == stringB[j-1]) dp[i][j] = 1 + dp[i-1][j-1];
+    	        else{
+    	            if(dp[i-1][j] > dp[i][j-1]){
+    	                dp[i][j] = dp[i-1][j];
+    	            }else{
+    	                dp[i][j] = dp[i][j-1];
+    	                
+    	            }
+    	        }
+    	    }
+	    }
+    return dp;
+}
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n;
+	    cin>>n;
+	    string s1;
+	    cin>>s1;
+	    string cs1 = s1;
+	    reverse(s1.begin(), s1.end());
+        vector<vector<int>> newDP = findAnswer(n , cs1 , s1);
+	    cout<<(newDP[n][n])/2<<endl;
+	    
 	}
-	
-	int ans=vis[4];
-	if(vis[3]>=vis[1])
-	{
-		ans+=vis[3];
-		ans+=(vis[2]+1)/2;
-	}
-	else
-	{
-		ans+=vis[3];
-		vis[1]-=vis[3];
-		if(vis[2]%2)
-		{
-			ans+=(vis[2]+1)/2;
-			if(vis[1]>2)
-			{
-				vis[1]-=2;
-				if(vis[1]%4)
-					ans=ans+vis[1]/4+1;
-				else
-					ans=ans+vis[1]/4;
-			}
-		}
-		else
-		{
-			ans+=vis[2]/2;
-			ans+=vis[1]/4;
-			if(vis[1]%4)
-				ans++;
-		}
-	}
-	cout<<ans<<endl;
-    return 0;
+	return 0;
 }

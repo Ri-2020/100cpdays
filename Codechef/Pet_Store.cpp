@@ -6,7 +6,6 @@ using namespace std;
 #define pf push_front
 #define vi vector<int>
 #define vl vector<ll>
-#define ms(a) memset(a,0,sizeof(a))
 #define pl pair<ll, ll>
 #define rep(i, n) for (int i = 0; i < n; i++)
 #define repi(i, x, n) for (int i = x; i < n; i++)
@@ -72,52 +71,36 @@ string reverses(string s, int n)
     return string(a.rbegin(), a.rend()) + b;
 }
 
-const int maxn=1e6+10;
-int a[maxn];
-int vis[5];
-
 int main()
 {
     effin_out;
-    int n;
-	ms(vis);
-	cin>>n;
-	for(int i=0;i<n;i++)
-	{
-		cin>>a[i];
-		vis[a[i]]++;
-	}
-	
-	int ans=vis[4];
-	if(vis[3]>=vis[1])
-	{
-		ans+=vis[3];
-		ans+=(vis[2]+1)/2;
-	}
-	else
-	{
-		ans+=vis[3];
-		vis[1]-=vis[3];
-		if(vis[2]%2)
-		{
-			ans+=(vis[2]+1)/2;
-			if(vis[1]>2)
-			{
-				vis[1]-=2;
-				if(vis[1]%4)
-					ans=ans+vis[1]/4+1;
-				else
-					ans=ans+vis[1]/4;
-			}
-		}
-		else
-		{
-			ans+=vis[2]/2;
-			ans+=vis[1]/4;
-			if(vis[1]%4)
-				ans++;
-		}
-	}
-	cout<<ans<<endl;
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin>>n;
+        vi a(n);
+        map<int , int> m;
+        rep(i,n){
+            cin>>a[i];
+            m[a[i]]++;
+        }
+
+        bool flag = true;
+        for(auto i : m){
+            if(i.second%2){
+                flag = false;
+                break;
+            }
+        }
+
+
+        if(flag){
+            yes;
+        }else no;
+
+        
+    }
     return 0;
 }
