@@ -1,34 +1,35 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-  int t;
-  cin>>t;
-  while(t--){
-    string s;
-    cin>>s;
-    int n = s.length();
-    queue<int> o;
-    stack<int> e;
-    for(int i = 0 ; i < n ; i++){
-        if((s[i]-'0')%2){
-            o.push(s[i]-'0');
-        }else{
-            e.push(s[i]-'0');
+int sol(int n , int m){
+    vector<int > ans;
+    int sum = 0;
+    for(int i = 0 ; i < m-n+1 ; i++){
+        int temp = i+n;
+        int ma = 0;
+        sum = 0;
+        while(temp >0){
+            int x = temp%10;
+            sum += x;
+            ma = max(ma , x);
+            temp = temp/10;
         }
-    }
-    while(!o.empty()){
-        cout<<o.front();
-        o.pop();
-    }
+        if(sum -ma == ma) ans.push_back(i);
 
-    while (!e.empty())
-    {
-        cout<<e.top();
-        e.pop();
     }
+    sum = 0;
+    for(auto i : ans){
+        sum += i;
+        cout<<i<<" ";
+    }cout<<endl;
 
-    cout<<endl;
-  }
+    return sum;
+}
+
+int main(){
+  int n , m;
+  cin>>n>>m;
+  cout<<sol(n ,m);
+  
   return 0;
 }

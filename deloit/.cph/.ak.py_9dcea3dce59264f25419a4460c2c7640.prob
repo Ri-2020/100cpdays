@@ -1,0 +1,1 @@
+{"name":"Local: ak","url":"c:\\Users\\rohit\\Desktop\\yt\\deloit\\ak.py","tests":[{"id":1672381875396,"input":"11 33","output":"66"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\rohit\\Desktop\\yt\\deloit\\ak.py","group":"local","local":true}

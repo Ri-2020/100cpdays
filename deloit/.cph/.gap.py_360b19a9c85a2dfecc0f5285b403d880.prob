@@ -1,0 +1,1 @@
+{"name":"Local: gap","url":"c:\\Users\\rohit\\Desktop\\yt\\deloit\\gap.py","tests":[{"id":1672382147940,"input":"999 23 652 545 121","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\rohit\\Desktop\\yt\\deloit\\gap.py","group":"local","local":true}
