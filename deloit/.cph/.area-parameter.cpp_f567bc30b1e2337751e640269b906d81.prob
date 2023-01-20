@@ -1,0 +1,1 @@
+{"name":"Local: area-parameter","url":"c:\\Users\\rohit\\Desktop\\yt\\deloit\\area-parameter.cpp","tests":[{"id":1674217466895,"input":"14 35\n42 35\n14 7\n42 7","output":"784 112"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\rohit\\Desktop\\yt\\deloit\\area-parameter.cpp","group":"local","local":true}
