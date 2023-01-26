@@ -74,35 +74,33 @@ string reverses(string s, int n)
 int main()
 {
     effin_out;
-    int n ,m;
-    cin>>n>>m;
-    vi a(n);
-    rep(i,n) cin>>a[i];
-
-    if(n == m) {
-        cout<<1<<endl;
-        return 0;
-    }
-    queue<int> q;
-    int sum =0;
-    int mi = INT_MAX;
-    int ans  =1;
-    int temp;
-    rep(i , m) {
-        q.push(a[i]);
-        sum += a[i];
-    }
-    mi = min(mi , sum);
-    repi( i , m , n){
-        sum = sum - q.front() + a[i];
-        temp = min(mi , sum);
-        if(temp < mi){
-            mi = temp;
-            ans = i-m+2;
+    string s;
+    cin>>s;
+    vector<int> q(s.length());
+    int z = s.length();
+    int inp = 1;
+    q[0] = 1;
+    repi(i ,1 ,z){
+        if(s[i] == s[i-1]){
+            q[i] = inp;
+        }else{
+            inp++;
+            q[i] = inp;
         }
-        q.pop();
-        q.push(a[i]);
     }
-    cout<<ans<<endl;
+
+    int n;
+    cin>>n;
+    int a,b;
+    
+    rep(j,n){
+        cin>>a>>b;
+        // int ans = 0;
+        int temp = b-a;
+        a = q[a-1];
+        b = q[b-1];
+        temp -= (b-a);
+        cout<<temp<<endl;
+    }
     return 0;
 }

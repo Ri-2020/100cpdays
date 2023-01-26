@@ -74,35 +74,31 @@ string reverses(string s, int n)
 int main()
 {
     effin_out;
-    int n ,m;
-    cin>>n>>m;
-    vi a(n);
-    rep(i,n) cin>>a[i];
+    int t;
+    cin >> t;
+    vector<pair<int , int>> a;
+    rep(i ,t)
+    {
+        int n ,m;
+        cin>>n>>m;
+        a.push_back(make_pair(n,m));
+    }
 
-    if(n == m) {
-        cout<<1<<endl;
-        return 0;
-    }
-    queue<int> q;
-    int sum =0;
-    int mi = INT_MAX;
-    int ans  =1;
-    int temp;
-    rep(i , m) {
-        q.push(a[i]);
-        sum += a[i];
-    }
-    mi = min(mi , sum);
-    repi( i , m , n){
-        sum = sum - q.front() + a[i];
-        temp = min(mi , sum);
-        if(temp < mi){
-            mi = temp;
-            ans = i-m+2;
+    sort_vector(a);
+    int ma = a[0].second;
+    repi(i , 1 ,t){
+        if(a[i].second < ma){
+            cout<<"Happy Alex"<<endl;
+            return 0;
+        }else{
+            ma = a[i].second;
         }
-        q.pop();
-        q.push(a[i]);
     }
-    cout<<ans<<endl;
+
+    cout<<"Poor Alex";
+
+    cout<<endl;
+
+
     return 0;
 }
