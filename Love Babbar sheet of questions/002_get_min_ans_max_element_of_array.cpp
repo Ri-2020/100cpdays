@@ -1,7 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-#define loop(n) for(int ii = 0; ii < n; ++ ii)
 
 pair<long long, long long> getMinMax(long long a[], int n) {
     long long ma = 0;

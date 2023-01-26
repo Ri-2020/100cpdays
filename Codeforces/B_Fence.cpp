@@ -6,7 +6,6 @@ using namespace std;
 #define pf push_front
 #define vi vector<int>
 #define vl vector<ll>
-#define ms(a) memset(a,0,sizeof(a))
 #define pl pair<ll, ll>
 #define rep(i, n) for (int i = 0; i < n; i++)
 #define repi(i, x, n) for (int i = x; i < n; i++)
@@ -75,83 +74,40 @@ string reverses(string s, int n)
 int main()
 {
     effin_out;
-    int n;
-	cin>>n;
-	vi a(n);
-	map<int , int> m;
-	for(int i=0;i<n;i++)
-	{
-		cin>>a[i];
-		m[a[i]]++;
-	}
+    int n ,m;
+    cin>>n>>m;
+    vi a(n);
+    rep(i,n) cin>>a[i];
+
+    if(n == m) {
+        cout<<1<<endl;
+        return 0;
+    }
+    queue<int> q;
+    int sum =0;
+    int mi = INT_MAX;
+    int ans  =1;
+    int temp;
+    rep(i , m) {
+        q.push(a[i]);
+        sum += a[i];
+    }
+    mi = min(mi , sum);
+    repi( i , m , n){
+        sum = sum - q.front() + a[i];
+        temp = min(mi , sum);
+        if(temp < mi){
+            mi = temp;
+            ans = i-m+2;
+        }
+        q.pop();
+        q.push(a[i]);
+    }
 
 
+    cout<<ans<<endl;
 
-	int ans =0;
+    
 
-	if(m[4] > 0){
-		ans += m[4];
-		m[4] = 0;
-	}
-	// cout<<"4: ";
-	// rep(i ,4){
-	// 	cout<<m[i+1]<<" ";
-	// }cout<<ans<<endl;
-
-	if(m[3] > 0){
-		if(m[1] >= m[3]){
-			ans += m[3];
-			m[1] = m[1] - m[3];
-		}
-		else{
-			ans += m[1];
-			m[3] -= m[1];
-			ans += m[3];
-			m[1] = 0;
-		}
-		m[3] = 0;
-	}
-	// cout<<"3: ";
-	// rep(i ,4){
-	// 	cout<<m[i+1]<<" ";
-	// }cout<<ans <<endl;
-
-	if(m[2] > 0){
-		ans += m[2] /2;
-		int temp = m[2]%2;
-		if(temp){
-			if(m[1] > 1){
-				m[1] -= 2;
-				m[2] =0;
-			}else if(m[1] == 1){
-				m[1] =0;
-				m[2] =0;
-			}else{
-				m[2] =0;
-			}
-			ans += 1;
-		}
-	}
-	// cout<<"2: ";
-	// rep(i ,4){
-	// 	cout<<m[i+1]<<" ";
-	// }cout<<ans<<endl;
-	if(m[1] > 0){
-		ans += m[1]/4;
-		int x = m[1]%4;
-		if(x){
-			ans+=1;
-		}
-	}
-	// cout<<"1: ";
-	// rep(i ,4){
-	// 	cout<<m[i+1]<<" ";
-	// }cout<<ans<<endl;
-
-	cout<<ans<<endl;
-
-
-
-	
     return 0;
 }
