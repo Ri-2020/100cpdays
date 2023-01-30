@@ -17,7 +17,7 @@ public:
     
             maxVal = max<long long>(arr[i], maxVal * arr[i]);
             minVal = min<long long>(arr[i], minVal * arr[i]);
-    
+
             maxProduct = max(maxProduct, maxVal);
         }
     

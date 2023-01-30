@@ -1,0 +1,1 @@
+{"name":"Local: uopen","url":"c:\\Users\\rohit\\Desktop\\yt\\deloit\\uopen.cpp","tests":[{"id":1674931205684,"input":"5 5 2 8\n1 2 7 8 4\n2 9 8 4 10\n6 5 3 3 1\n9 8 7 6 4\n2 3 5 7 9","output":"7"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\rohit\\Desktop\\yt\\deloit\\uopen.cpp","group":"local","local":true}
