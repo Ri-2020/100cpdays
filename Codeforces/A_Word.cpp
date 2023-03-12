@@ -15,7 +15,7 @@ using namespace std;
     cin.tie(0);              \
     cout.tie(0)
 #define check cout << "check 1 "
-#define yes cout << "YES" << endl
+#define yes  cout << "YES" << endl
 #define no cout << "NO" << endl
 int m = 1000000007;
 
@@ -74,28 +74,32 @@ string reverses(string s, int n)
 int main()
 {
     effin_out;
-    int t;
-    cin >> t;
-    vector<long long> dp;
-    int x = 1;
-    dp.push_back(1);
-    int i = 0;
-    while (x < 10000001)
+    int count1 = 0, count2 = 0;
+    string s;
+    cin >> s;
+    for (int i = 0; i < s.size(); i++)
     {
-        x += 2;
-        dp.push_back(dp[i] + x);
-        i += 1;
+        if (s[i] >= 'a' && s[i] <= 'z')
+        {
+            count1++;
+        }
+        else
+        {
+            count2++;
+        }
     }
-    while (t--)
-    {
-        long long n, k;
-        cin >> n >> k;
 
 
-        // I actually don't know how it does
-
-        if((k*k)<=n && (n+k)%2==0) cout<<"YES\n";
-        else  cout<<"NO\n";
+    
+    if(count1<count2){
+        transform(s.begin(), s.end(), s.begin(), ::toupper);
+        cout<<s<<endl;
     }
+    else{
+        transform(s.begin(), s.end(), s.begin(), ::tolower);
+        cout<<s<<endl;
+    }
+    return 0;
+
     return 0;
 }
