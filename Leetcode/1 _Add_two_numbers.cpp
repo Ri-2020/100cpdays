@@ -5,7 +5,7 @@
 // Make Listnode class as used in the code becow
 
 class ListNode{
-    public:
+public:
     int val;
     ListNode* next;
     ListNode(int x, ListNode* next): val(x), next(next) {}
