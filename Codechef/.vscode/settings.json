@@ -4,6 +4,7 @@
         "regex": "cpp",
         "vector": "cpp",
         "array": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "iostream": "cpp"
     }
 }
