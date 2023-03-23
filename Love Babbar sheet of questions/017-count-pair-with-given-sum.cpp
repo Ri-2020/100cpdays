@@ -26,7 +26,6 @@ public:
                 continue;
             }
             
-            
             if( x < 0) continue;
             int a = i.second;
             int b = m[x];
