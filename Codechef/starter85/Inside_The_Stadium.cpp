@@ -15,8 +15,10 @@ using namespace std;
     cin.tie(0);              \
     cout.tie(0)
 #define check cout << "check 1 "
-#define yes  cout << "YES" << endl
-#define no cout << "NO" << endl
+#define YES  cout << "YES" << endl
+#define NO cout << "NO" << endl
+#define no cout<<"no"<<endl;
+#define yes cout<<"yes"<<endl;
 int m = 1000000007;
 
 ll log_2(ll x)
@@ -74,31 +76,24 @@ string reverses(string s, int n)
 int main()
 {
     effin_out;
-    int count1 = 0, count2 = 0;
-    string s;
-    cin >> s;
-    for (int i = 0; i < s.size(); i++)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        if (s[i] >= 'a' && s[i] <= 'z')
-        {
-            count1++;
+        int n;
+        cin>>n;
+        vector<int> a(n);
+        rep(i,n) cin>>a[i];
+        int ans=0;
+        int count = 0;
+        rep(i,n){
+            count+= a[i];
+            if(count == i+1){
+                ans++;
+            }
         }
-        else
-        {
-            count2++;
-        }
-    }
+        cout<<ans<<endl;
 
-
-    
-    if(count1<count2){
-        transform(s.begin(), s.end(), s.begin(), ::toupper);
-        cout<<s<<endl;
-    }
-    else{
-        transform(s.begin(), s.end(), s.begin(), ::tolower);
-        cout<<s<<endl;
     }
     return 0;
-
 }

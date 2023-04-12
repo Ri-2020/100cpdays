@@ -17,6 +17,8 @@ using namespace std;
 #define check cout << "check 1 "
 #define yes  cout << "YES" << endl
 #define no cout << "NO" << endl
+#define sno cout<<"no"<<endl;
+#define syes cout<<"yes"<<endl;
 int m = 1000000007;
 
 ll log_2(ll x)
@@ -74,31 +76,42 @@ string reverses(string s, int n)
 int main()
 {
     effin_out;
-    int count1 = 0, count2 = 0;
-    string s;
-    cin >> s;
-    for (int i = 0; i < s.size(); i++)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        if (s[i] >= 'a' && s[i] <= 'z')
-        {
-            count1++;
+        string s;
+        cin>>s;
+        int n = s.size();
+        if(n == 2){
+            if(s[0] == s[1]){
+                sno
+                continue;
+            }else{
+                syes
+                continue;
+            }
         }
-        else
-        {
-            count2++;
+
+        int r =0;
+        int g = 0;
+
+        rep(i , n){
+            if(s[i] == s[(i+1)%n] and s[i] == 'R'){
+                r++;
+            }
+            else if(s[i] == s[(i+1)%n] and s[i] == 'G'){
+                g++;
+            }
         }
-    }
 
 
-    
-    if(count1<count2){
-        transform(s.begin(), s.end(), s.begin(), ::toupper);
-        cout<<s<<endl;
-    }
-    else{
-        transform(s.begin(), s.end(), s.begin(), ::tolower);
-        cout<<s<<endl;
+        if(r>1 or g>1 ) sno
+        else if(r == 0 and g!= 0) sno
+        else if(g == 0 and r!= 0) sno
+        else syes
+
+
     }
     return 0;
-
 }

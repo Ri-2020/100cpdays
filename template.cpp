@@ -15,8 +15,10 @@ using namespace std;
     cin.tie(0);              \
     cout.tie(0)
 #define check cout << "check 1 "
-#define yes  cout << "YES" << endl
-#define no cout << "NO" << endl
+#define YES  cout << "YES" << endl
+#define NO cout << "NO" << endl
+#define no cout<<"no"<<endl;
+#define yes cout<<"yes"<<endl;
 int m = 1000000007;
 
 ll log_2(ll x)
